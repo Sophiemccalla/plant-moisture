@@ -5,7 +5,8 @@ function Home() {
   return (
     <Container>
       <Segment basic>
-        <Header content="Plants" />
+        <Header size='huge' content="Moisture Sensor" />
+        Please slect the plant you want to use your moisture sensor with.
       </Segment>
       <Card.Group>
         <Card
