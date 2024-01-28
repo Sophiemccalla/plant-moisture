@@ -1,5 +1,7 @@
 import { Container, Header, Segment, List, Button } from 'semantic-ui-react';
 import MoistureInstructions from './MoistureInstructions';
+import { AddToCalendarButton } from 'add-to-calendar-button-react'
+
 
 function RadishDetails() {
   return (
@@ -8,7 +10,13 @@ function RadishDetails() {
         <Header size='huge' content='Radishes'/>
         <MoistureInstructions image='/images/card-radish.jpeg' /> 
         <Button>Download</Button>
-        <Button>Just Watered</Button>
+        <AddToCalendarButton
+          name='Weekly beat watering reminder'
+          //startDate={(new Date()).toLocaleDateString()}
+          startDate='2024-01-28'
+          options={['Apple','Google','Yahoo','iCal']}
+          timeZone="America/Montreal"
+        ></AddToCalendarButton>
         <Header size='medium' content='General plant care'/>
         <List bulleted>
           <List.Item>
@@ -30,7 +38,7 @@ function RadishDetails() {
           </List.Item>
           <List.Item>
             A final tip is that the best sign to see if your radish is ready to harvest is when you can
-            feel or see the top of the radish poking through the soil.
+            feel or see the top of the radish poking through the soil until it is moist.
           </List.Item>
         </List>
         <a href='https://www.almanac.com/plant/radishes'>https://www.almanac.com/plant/radishes</a>

@@ -21,8 +21,8 @@ function MoistureInstructions(props) {
               you hear the buzzer. Once it has buzzed the plant is at it's ideal moisture level.
             </List.Item>
             <List.Item>
-              Click the "Just Watered" button which will send you a notification everytime you need to 
-              use your sensor to check the moisture.
+              Click the "Add to calendar" button and click your desired calendar. It will bring you
+              to that calendar so you can set a weekly reminder to water your plant.
             </List.Item>
           </List>
         </GridColumn>
