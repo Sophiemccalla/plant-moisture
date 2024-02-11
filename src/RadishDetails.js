@@ -1,8 +1,9 @@
-import { Container, Header, Segment, List, Button } from 'semantic-ui-react';
+import { Container, Header, Segment, List } from 'semantic-ui-react';
 import MoistureInstructions from './MoistureInstructions';
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
 import { useState } from 'react';
 import moment from 'moment';
+import CodeInstructions from './CodeInstructions';
 
 function RadishDetails() {
   const [date] = useState(moment().add(7, 'days').format("YYYY-MM-DD"))
@@ -11,7 +12,7 @@ function RadishDetails() {
       <Segment basic>
         <Header size='huge' content='Radishes'/>
         <MoistureInstructions image='/images/card-radish.jpeg' /> 
-        <Button>Download</Button>
+        <CodeInstructions />
         <AddToCalendarButton
           name='Weekly radish watering reminder'
           startDate={date}
@@ -37,7 +38,7 @@ function RadishDetails() {
             time to harvest.
           </List.Item>
           <List.Item>
-            The standard amount you have to water per week is one inch above the soil.
+            The standard amount you have to water per week is one inch or until it is moist.
           </List.Item>
           <List.Item>
             A final tip is that the best sign to see if your radish is ready to harvest is when you can

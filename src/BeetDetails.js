@@ -1,9 +1,10 @@
 import './App.css';
-import { Card, Container, Header, Segment, List, Button, } from 'semantic-ui-react';
+import { Card, Container, Header, Segment, List, Button, Modal, } from 'semantic-ui-react';
 import MoistureInstructions from './MoistureInstructions';
 import { useEffect, useState } from 'react';
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
 import moment from 'moment';
+import CodeInstructions from './CodeInstructions';
 
 function BeetDetails() {
   const [date] = useState(moment().add(7, 'days').format("YYYY-MM-DD"))
@@ -12,7 +13,7 @@ function BeetDetails() {
       <Segment basic>
         <Header size='huge' content='Beets'/>
         <MoistureInstructions image='/images/card-beet.png' /> 
-        <Button>Download</Button>
+        <CodeInstructions />
         <AddToCalendarButton
           name='Weekly beat watering reminder'
           startDate={date}
@@ -36,7 +37,7 @@ function BeetDetails() {
             70 days so about 2 months.
           </List.Item>
           <List.Item>
-            The standard amount you have to water per week is one inch above the soil until it is moist.
+            The standard amount you have to water per week is one inch or until it is moist.
           </List.Item>
         </List>
         <a href='https://www.almanac.com/plant/beets'>https://www.almanac.com/plant/beets</a>
