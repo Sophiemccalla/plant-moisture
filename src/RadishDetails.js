@@ -1,9 +1,11 @@
 import { Container, Header, Segment, List, Button } from 'semantic-ui-react';
 import MoistureInstructions from './MoistureInstructions';
-import { AddToCalendarButton } from 'add-to-calendar-button-react'
-
+import { AddToCalendarButton } from 'add-to-calendar-button-react';
+import { useState } from 'react';
+import moment from 'moment';
 
 function RadishDetails() {
+  const [date] = useState(moment().add(7, 'days').format("YYYY-MM-DD"))
   return (
     <Container>
       <Segment basic>
@@ -11,9 +13,10 @@ function RadishDetails() {
         <MoistureInstructions image='/images/card-radish.jpeg' /> 
         <Button>Download</Button>
         <AddToCalendarButton
-          name='Weekly beat watering reminder'
-          //startDate={(new Date()).toLocaleDateString()}
-          startDate='2024-01-28'
+          name='Weekly radish watering reminder'
+          startDate={date}
+          recurrence='weekly'
+          recurrence_interval='1'          
           options={['Apple','Google','Yahoo','iCal']}
           timeZone="America/Montreal"
         ></AddToCalendarButton>
